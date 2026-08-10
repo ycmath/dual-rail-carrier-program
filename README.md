@@ -41,6 +41,7 @@ Every release in the series follows the same discipline:
 | 8 | [demorgan-degree-three-no-go](https://github.com/ycmath/demorgan-degree-three-no-go) | No genuine degree-three De Morgan cohomology of the carrier, either characteristic: separability vacuum + sharp counter-family (char 0), four-corner collapse (char 2) — degree-axis rigidity | [10.5281/zenodo.21868976](https://doi.org/10.5281/zenodo.21868976) |
 | 9 | [carry-bidegree-decoupling](https://github.com/ycmath/carry-bidegree-decoupling) | The carry is the socle differential of the resolved block (Ext¹ class = resolved-face character), and it decouples from every degree-three Hochschild/associator class by first-quadrant index arithmetic, uniformly in r | [10.5281/zenodo.21869440](https://doi.org/10.5281/zenodo.21869440) |
 | 10 | [carry-qec-distinct-siblings](https://github.com/ycmath/carry-qec-distinct-siblings) | The carry and the CSS-code Bockstein obstructions are distinct siblings: native tower stops (all m), twisted tower absorbs (δ(e)=0), axiom-scoped no-go — with the external anchor verified at the equation level | [10.5281/zenodo.21869871](https://doi.org/10.5281/zenodo.21869871) |
+| 11 | **[carrier-r-flip](https://github.com/ycmath/carrier-r-flip)** (capstone) | The R-flip: one degree-one, 2-primary obstruction with three faces — the receptor trichotomy (carry ≠ dec, witness P), Theorem 0 (cohomological minimality) assembled from the published companions, and the Isaksen degree-two contrast. Lean: 30 theorems, all axiom-free | [10.5281/zenodo.21870654](https://doi.org/10.5281/zenodo.21870654) |
 
 ## How the releases fit together
 
@@ -55,6 +56,7 @@ graph TD
     D3["8. degree-3 no-go<br/>(obstruction rigid at degree 1)"]
     BD["9. bidegree decoupling<br/>(socle differential = the carry)"]
     QN["10. carry vs CSS Bockstein<br/>(distinct siblings, scoped no-go)"]
+    RF["11. the carrier R-flip — CAPSTONE<br/>(trichotomy + Theorem 0)"]
 
     W1 -->|"Paper II builds on the<br/>resolved-block theorem"| W2
     W1 -->|"scope note discharged"| CT
@@ -68,6 +70,10 @@ graph TD
     W2 -->|"carry anchors"| BD
     BD -->|"the carry's socle realization"| QN
     W2 -->|"level filtration (dec)"| QN
+    D3 -->|"Theorem 0, clause 1"| RF
+    BD -->|"Theorem 0, clause 2"| RF
+    QN -->|"Theorem 0, clause 3"| RF
+    W2 -->|"nu = dec (face 2)"| RF
 ```
 
 The Lean developments are shared where the mathematics is: the coatom
