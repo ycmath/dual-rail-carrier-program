@@ -42,6 +42,7 @@ Every release in the series follows the same discipline:
 | 9 | [carry-bidegree-decoupling](https://github.com/ycmath/carry-bidegree-decoupling) | The carry is the socle differential of the resolved block (Ext¹ class = resolved-face character), and it decouples from every degree-three Hochschild/associator class by first-quadrant index arithmetic, uniformly in r | [10.5281/zenodo.21869440](https://doi.org/10.5281/zenodo.21869440) |
 | 10 | [carry-qec-distinct-siblings](https://github.com/ycmath/carry-qec-distinct-siblings) | The carry and the CSS-code Bockstein obstructions are distinct siblings: native tower stops (all m), twisted tower absorbs (δ(e)=0), axiom-scoped no-go — with the external anchor verified at the equation level | [10.5281/zenodo.21869871](https://doi.org/10.5281/zenodo.21869871) |
 | 11 | **[carrier-r-flip](https://github.com/ycmath/carrier-r-flip)** (capstone) | The R-flip: one degree-one, 2-primary obstruction with three faces — the receptor trichotomy (carry ≠ dec, witness P), Theorem 0 (cohomological minimality) assembled from the published companions, and the Isaksen degree-two contrast. Lean: 30 theorems, all axiom-free | [10.5281/zenodo.21870654](https://doi.org/10.5281/zenodo.21870654) |
+| 12 | [gamma-tower-split-positive](https://github.com/ycmath/gamma-tower-split-positive) | The carrier's internal 2-adic tower is split-positive: route-forcing (no uniserial length-3 module over 𝔽₂[V₄]), the all-m closed-form ladder, the η class, levelwise obstruction values without a persistent class | [10.5281/zenodo.21871946](https://doi.org/10.5281/zenodo.21871946) |
 
 ## How the releases fit together
 
@@ -57,6 +58,7 @@ graph TD
     BD["9. bidegree decoupling<br/>(socle differential = the carry)"]
     QN["10. carry vs CSS Bockstein<br/>(distinct siblings, scoped no-go)"]
     RF["11. the carrier R-flip — CAPSTONE<br/>(trichotomy + Theorem 0)"]
+    GT["12. gamma tower split-positive<br/>(levelwise values, no persistent class)"]
 
     W1 -->|"Paper II builds on the<br/>resolved-block theorem"| W2
     W1 -->|"scope note discharged"| CT
@@ -74,6 +76,8 @@ graph TD
     BD -->|"Theorem 0, clause 2"| RF
     QN -->|"Theorem 0, clause 3"| RF
     W2 -->|"nu = dec (face 2)"| RF
+    BD -->|"the socle seed"| GT
+    QN -->|"the tower object + ladder"| GT
 ```
 
 The Lean developments are shared where the mathematics is: the coatom
