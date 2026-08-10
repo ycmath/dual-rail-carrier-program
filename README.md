@@ -39,6 +39,7 @@ Every release in the series follows the same discipline:
 | 6 | [dual-rail-crown](https://github.com/ycmath/dual-rail-crown) | The resolved-face crown: the closed core's outer fragment = the self-dual clone; count 2^(2^(n−1)); one-constant completion | [10.5281/zenodo.21866741](https://doi.org/10.5281/zenodo.21866741) |
 | 7 | [odd-flat-selector-count](https://github.com/ycmath/odd-flat-selector-count) | On the odd flat carrier: the linear routing law refuted; the exact ternary selector count C(3, k≥3) = 103,275 | [10.5281/zenodo.21868044](https://doi.org/10.5281/zenodo.21868044) |
 | 8 | [demorgan-degree-three-no-go](https://github.com/ycmath/demorgan-degree-three-no-go) | No genuine degree-three De Morgan cohomology of the carrier, either characteristic: separability vacuum + sharp counter-family (char 0), four-corner collapse (char 2) — degree-axis rigidity | [10.5281/zenodo.21868976](https://doi.org/10.5281/zenodo.21868976) |
+| 9 | [carry-bidegree-decoupling](https://github.com/ycmath/carry-bidegree-decoupling) | The carry is the socle differential of the resolved block (Ext¹ class = resolved-face character), and it decouples from every degree-three Hochschild/associator class by first-quadrant index arithmetic, uniformly in r | [10.5281/zenodo.21869440](https://doi.org/10.5281/zenodo.21869440) |
 
 ## How the releases fit together
 
@@ -51,6 +52,7 @@ graph TD
     CR["6. dual-rail crown<br/>(self-dual completeness, 2^(2^(n-1)))"]
     OF["7. odd flat selector count<br/>(103,275)"]
     D3["8. degree-3 no-go<br/>(obstruction rigid at degree 1)"]
+    BD["9. bidegree decoupling<br/>(socle differential = the carry)"]
 
     W1 -->|"Paper II builds on the<br/>resolved-block theorem"| W2
     W1 -->|"scope note discharged"| CT
@@ -60,6 +62,8 @@ graph TD
     CR -->|"k = 1 constituent of the<br/>fixed-point-free factor"| OF
     W2 -->|"carry / dec anchors"| D3
     CN -->|"level axis vs degree axis"| D3
+    D3 -->|"degree-axis companion"| BD
+    W2 -->|"carry anchors"| BD
 ```
 
 The Lean developments are shared where the mathematics is: the coatom
