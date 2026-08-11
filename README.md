@@ -13,10 +13,12 @@ Every release in the series follows the same discipline:
 
 - **full proofs** at journal standard — no proof sketches;
 - **machine verification** in dependency-minimal Lean 4 (core only, no
-  mathlib, no `native_decide`, no `sorry`; kernel axiom profile at most
-  `[propext, Quot.sound]`), plus independent exhaustive replays of all
-  finite claims — with any certificate-level computational premises
-  declared explicitly;
+  mathlib, no `sorry`; no `native_decide` on any headline theorem's
+  axiom path; kernel axiom profile as stated per release — most
+  releases `[propext, Quot.sound]`, at most
+  `[propext, Classical.choice, Quot.sound]`), plus independent
+  exhaustive replays of all finite claims — with any certificate-level
+  computational premises declared explicitly;
 - **honest scope**: what is proved, what is certified computation, and
   what remains open are separated in print;
 - **full provenance**: the mathematics is the author's; AI assistance
@@ -43,6 +45,7 @@ Every release in the series follows the same discipline:
 | 10 | [carry-qec-distinct-siblings](https://github.com/ycmath/carry-qec-distinct-siblings) | The carry and the CSS-code Bockstein obstructions are distinct siblings: native tower stops (all m), twisted tower absorbs (δ(e)=0), axiom-scoped no-go — with the external anchor verified at the equation level | [10.5281/zenodo.21869871](https://doi.org/10.5281/zenodo.21869871) |
 | 11 | **[carrier-r-flip](https://github.com/ycmath/carrier-r-flip)** (capstone) | The R-flip: one degree-one, 2-primary obstruction with three faces — the receptor trichotomy (carry ≠ dec, witness P), Theorem 0 (cohomological minimality) assembled from the published companions, and the Isaksen degree-two contrast. Lean: 30 theorems, all axiom-free | [10.5281/zenodo.21870654](https://doi.org/10.5281/zenodo.21870654) |
 | 12 | [gamma-tower-split-positive](https://github.com/ycmath/gamma-tower-split-positive) | The carrier's internal 2-adic tower is split-positive: route-forcing (no uniserial length-3 module over 𝔽₂[V₄]), the all-m closed-form ladder, the η class, levelwise obstruction values without a persistent class | [10.5281/zenodo.21871946](https://doi.org/10.5281/zenodo.21871946) |
+| 13 | [flat-clone-counting-corrected](https://github.com/ycmath/flat-clone-counting-corrected) | Corrections and the per-signature theory: the even-carrier routing law proved for every k and n (∏_b (2b)^(S(n,b)·2^(n−b))); per-signature values 2q+1 (k=1), 5^q (k=2, Lean, axioms [propext, Classical.choice, Quot.sound]), 2k+1 (q=1); the multiplicative assembly refuted by finite witnesses (joint 21 < 25, fibers 5,5,5,3,3; the k≥2 even-part determination witness) | [10.5281/zenodo.21887403](https://doi.org/10.5281/zenodo.21887403) |
 
 ## How the releases fit together
 
@@ -59,6 +62,7 @@ graph TD
     QN["10. carry vs CSS Bockstein<br/>(distinct siblings, scoped no-go)"]
     RF["11. the carrier R-flip — CAPSTONE<br/>(trichotomy + Theorem 0)"]
     GT["12. gamma tower split-positive<br/>(levelwise values, no persistent class)"]
+    FC["13. flat clone counting corrected<br/>(even routing law all k; assembly refuted)"]
 
     W1 -->|"Paper II builds on the<br/>resolved-block theorem"| W2
     W1 -->|"scope note discharged"| CT
@@ -78,6 +82,8 @@ graph TD
     W2 -->|"nu = dec (face 2)"| RF
     BD -->|"the socle seed"| GT
     QN -->|"the tower object + ladder"| GT
+    CR -->|"k = 1 case of the even law"| FC
+    OF -->|"per-signature program;<br/>the sect. 8 regime corrected,<br/>equal-fiber refuted"| FC
 ```
 
 The Lean developments are shared where the mathematics is: the coatom
@@ -91,13 +97,18 @@ concrete nine-element carrier).
 Stated precisely in the individual papers; headline items:
 
 - the general-arity extension count C(n, k) on the odd flat carrier
-  (n ≥ 4), and the location of the routing/signature-isolation boundary;
-- the equal-fiber factorization of the full restriction count (open for
-  n ≥ 3);
-- the general fixed-point-free product formula (proved only in its k = 1
-  crown constituent);
-- extension of the crown theory beyond the single-orbit case (the
-  routing/signature program).
+  (n ≥ 4) — release 13 corrects the signature-isolation regime that
+  was anticipated at this boundary;
+- the exact odd-carrier restriction totals for n ≥ 3 (release 13 proves
+  no product-over-cells formula can give them; upper and lower bounds
+  are in print — e.g. the k = 1, n = 3 total lies in [16, 45,360]);
+- the per-signature values for k ≥ 3, q ≥ 2 (the 7^q conjecture), and
+  the joint/cross-cell theory of the odd carrier.
+
+Settled since first posed: the general fixed-point-free product formula
+— **proved** for every k and n (release 13, extending the k = 1 crown
+constituent); the equal-fiber factorization — **refuted** at k = 1,
+n = 3 (release 13: joint 21 < 25, fibers 5,5,5,3,3).
 
 ## Reproducing
 
